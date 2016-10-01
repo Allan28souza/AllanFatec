@@ -86,7 +86,7 @@ public class TelaAgenda extends javax.swing.JFrame {
         jToolBar1.setRollover(true);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/0198.png"))); // NOI18N
-        jLabel2.setText("Usu√°rio: ");
+        jLabel2.setText("Usu·rio: ");
         jToolBar1.add(jLabel2);
 
         lblUsuario.setMaximumSize(new java.awt.Dimension(200, 16));
@@ -95,7 +95,7 @@ public class TelaAgenda extends javax.swing.JFrame {
         jToolBar1.add(jSeparator2);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/0277.png"))); // NOI18N
-        jLabel4.setText("N√≠vel: ");
+        jLabel4.setText("NÌvel: ");
         jToolBar1.add(jLabel4);
 
         lblNivel.setMaximumSize(new java.awt.Dimension(200, 16));
@@ -118,10 +118,10 @@ public class TelaAgenda extends javax.swing.JFrame {
         jMenu1.add(mnuContatos);
 
         mnuUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/0198.png"))); // NOI18N
-        mnuUsuarios.setText("Usu√°rios");
+        mnuUsuarios.setText("Usu·rios");
 
         mnuTrocarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/0009.png"))); // NOI18N
-        mnuTrocarUsuario.setText("Trocar Usu√°rio");
+        mnuTrocarUsuario.setText("Trocar Usu·rio");
         mnuTrocarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mnuTrocarUsuarioActionPerformed(evt);
@@ -148,7 +148,7 @@ public class TelaAgenda extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Configura√ß√µes");
+        jMenu2.setText("ConfiguraÁıes");
 
         mnuSom.setSelected(true);
         mnuSom.setText("Som");
@@ -299,7 +299,7 @@ public class TelaAgenda extends javax.swing.JFrame {
     }//GEN-LAST:event_mnuSairActionPerformed
 
   /**
-   * MenuItem GTK - Muda o tema da aplica√ß√£o para GTK+
+   * MenuItem GTK - Muda o tema da aplicaÁ„o para GTK+
    *
    * @param evt
    */
@@ -308,7 +308,7 @@ public class TelaAgenda extends javax.swing.JFrame {
     }//GEN-LAST:event_mnuGTKActionPerformed
 
   /**
-   * MenuItem Nimbus - Muda o tema da aplica√ß√£o para Nimbus
+   * MenuItem Nimbus - Muda o tema da aplicaÁ„o para Nimbus
    *
    * @param evt
    */
@@ -317,7 +317,7 @@ public class TelaAgenda extends javax.swing.JFrame {
     }//GEN-LAST:event_mnuNimbusActionPerformed
 
   /**
-   * MenuItem MacOSX - Muda o tema da aplica√ß√£o para MacOSX
+   * MenuItem MacOSX - Muda o tema da aplicaÁ„o para MacOSX
    *
    * @param evt
    */
@@ -351,6 +351,17 @@ public class TelaAgenda extends javax.swing.JFrame {
     private void mnuTrocarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuTrocarUsuarioActionPerformed
       TelaLogin telaLogin = new TelaLogin(this, true);
       telaLogin.setVisible(true);
+      
+      
+
+      if ( !telaLogin.getUsuario().trim().isEmpty() ) {
+          lblUsuario.setText( telaLogin.getUsuario() );
+          lblNivel.setText( telaLogin.getNivel() );
+      }
+         
+      lblSO.setText( descobreSO() );
+
+      telaLogin.dispose();
     }//GEN-LAST:event_mnuTrocarUsuarioActionPerformed
 
   private void mnuWindowsClassicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuWindowsClassicActionPerformed
@@ -408,7 +419,7 @@ public class TelaAgenda extends javax.swing.JFrame {
     
     
   /**
-   * M√©todo mudaLaF - Muda o Look And Feel da Aplica√ß√£o
+   * MÈtodo mudaLaF - Muda o Look And Feel da AplicaÁ„o
    *
    * @param temaLaF
    */
@@ -421,8 +432,8 @@ public class TelaAgenda extends javax.swing.JFrame {
     } catch (ClassNotFoundException | InstantiationException |
             IllegalAccessException | UnsupportedLookAndFeelException ex) {
 
-      JOptionPane.showMessageDialog(null, "Tema n√£o suportado neste S.O.",
-              "Aten√ß√£o", JOptionPane.INFORMATION_MESSAGE);
+      JOptionPane.showMessageDialog(null, "Tema n„o suportado neste S.O.",
+              "AtenÁ„o", JOptionPane.INFORMATION_MESSAGE);
 
     }
 

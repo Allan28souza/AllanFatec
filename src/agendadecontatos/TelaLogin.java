@@ -21,7 +21,16 @@ public class TelaLogin extends javax.swing.JDialog {
 
     private String usuario;
     private String nivel;
+    private String tema;
 
+    public String getTema() {
+        return tema;
+    }
+
+    public void setTema(String tema) {
+        this.tema = tema;
+    }
+    
     public String getUsuario() {
         return usuario;
     }
@@ -61,8 +70,8 @@ public class TelaLogin extends javax.swing.JDialog {
         jLabel3 = new javax.swing.JLabel();
         txtUsuario = new javax.swing.JTextField();
         txtSenha = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        BtmLogar = new javax.swing.JButton();
+        BtmSair = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 
@@ -72,19 +81,19 @@ public class TelaLogin extends javax.swing.JDialog {
 
         jLabel3.setText("Senha:");
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/1778.png"))); // NOI18N
-        jButton1.setText("Logar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        BtmLogar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/1778.png"))); // NOI18N
+        BtmLogar.setText("Logar");
+        BtmLogar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                BtmLogarActionPerformed(evt);
             }
         });
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/1766.png"))); // NOI18N
-        jButton2.setText("Sair");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        BtmSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/1766.png"))); // NOI18N
+        BtmSair.setText("Sair");
+        BtmSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                BtmSairActionPerformed(evt);
             }
         });
 
@@ -101,16 +110,16 @@ public class TelaLogin extends javax.swing.JDialog {
                         .addComponent(jLabel2))
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel3)
                             .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(txtSenha, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(BtmSair, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(BtmLogar, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(27, 27, 27)))))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,27 +136,27 @@ public class TelaLogin extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtmSair)
+                    .addComponent(BtmLogar))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(332, 171));
+        setSize(new java.awt.Dimension(370, 177));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void BtmSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtmSairActionPerformed
       setUsuario("");
-      setNivel( "" );
+      setNivel("");
       this.setVisible( false );
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_BtmSairActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void BtmLogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtmLogarActionPerformed
       EntityManagerFactory factory = Persistence.createEntityManagerFactory( "AgendaDeContatosPU" );
       EntityManager manager = factory.createEntityManager();
 
-      Query query = manager.createNamedQuery( "Usuarios.findByUsuarioAndSenha" );
+      Query query = manager.createNamedQuery( "Usuarios.findByUsuarioESenha" );
       query.setParameter( "usuario", txtUsuario.getText() );
       query.setParameter( "senha", txtSenha.getText() );
 
@@ -155,11 +164,12 @@ public class TelaLogin extends javax.swing.JDialog {
 
       if ( !usuario.isEmpty() ) {
 
-        setNomeUsuario( usuario.get( 0 ).getUsuario() );
-        setNivelUsuario( usuario.get( 0 ).getNivel() );
-        setTemaUsuario( usuario.get( 0 ).getTema() );
+        setUsuario( usuario.get( 0 ).getUsuario() );
+        setNivel( usuario.get( 0 ).getNivel() );
+        setTema( usuario.get( 0 ).getTema() );
 
         manager.close();
+        factory.close();
 
         this.setVisible( false );
 
@@ -169,7 +179,7 @@ public class TelaLogin extends javax.swing.JDialog {
             "Atenção", JOptionPane.ERROR_MESSAGE );
 
       }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_BtmLogarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -214,8 +224,8 @@ public class TelaLogin extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton BtmLogar;
+    private javax.swing.JButton BtmSair;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
