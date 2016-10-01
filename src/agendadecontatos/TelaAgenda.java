@@ -86,7 +86,7 @@ public class TelaAgenda extends javax.swing.JFrame {
         jToolBar1.setRollover(true);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/0198.png"))); // NOI18N
-        jLabel2.setText("Usuário: ");
+        jLabel2.setText("UsuÃ¡rio: ");
         jToolBar1.add(jLabel2);
 
         lblUsuario.setMaximumSize(new java.awt.Dimension(200, 16));
@@ -95,7 +95,7 @@ public class TelaAgenda extends javax.swing.JFrame {
         jToolBar1.add(jSeparator2);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/0277.png"))); // NOI18N
-        jLabel4.setText("Nível: ");
+        jLabel4.setText("NÃ­vel: ");
         jToolBar1.add(jLabel4);
 
         lblNivel.setMaximumSize(new java.awt.Dimension(200, 16));
@@ -118,10 +118,10 @@ public class TelaAgenda extends javax.swing.JFrame {
         jMenu1.add(mnuContatos);
 
         mnuUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/0198.png"))); // NOI18N
-        mnuUsuarios.setText("Usuários");
+        mnuUsuarios.setText("Usuarios");
 
         mnuTrocarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/0009.png"))); // NOI18N
-        mnuTrocarUsuario.setText("Trocar Usuário");
+        mnuTrocarUsuario.setText("Trocar Usuario");
         mnuTrocarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mnuTrocarUsuarioActionPerformed(evt);
@@ -148,7 +148,7 @@ public class TelaAgenda extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Configurações");
+        jMenu2.setText("ConfiguraÃ§Ãµes");
 
         mnuSom.setSelected(true);
         mnuSom.setText("Som");
@@ -299,7 +299,7 @@ public class TelaAgenda extends javax.swing.JFrame {
     }//GEN-LAST:event_mnuSairActionPerformed
 
   /**
-   * MenuItem GTK - Muda o tema da aplicação para GTK+
+   * MenuItem GTK - Muda o tema da aplicaï¿½ï¿½o para GTK+
    *
    * @param evt
    */
@@ -308,7 +308,7 @@ public class TelaAgenda extends javax.swing.JFrame {
     }//GEN-LAST:event_mnuGTKActionPerformed
 
   /**
-   * MenuItem Nimbus - Muda o tema da aplicação para Nimbus
+   * MenuItem Nimbus - Muda o tema da aplicaï¿½ï¿½o para Nimbus
    *
    * @param evt
    */
@@ -317,7 +317,7 @@ public class TelaAgenda extends javax.swing.JFrame {
     }//GEN-LAST:event_mnuNimbusActionPerformed
 
   /**
-   * MenuItem MacOSX - Muda o tema da aplicação para MacOSX
+   * MenuItem MacOSX - Muda o tema da aplicaï¿½ï¿½o para MacOSX
    *
    * @param evt
    */
@@ -419,7 +419,7 @@ public class TelaAgenda extends javax.swing.JFrame {
     
     
   /**
-   * Método mudaLaF - Muda o Look And Feel da Aplicação
+   * Mï¿½todo mudaLaF - Muda o Look And Feel da Aplicaï¿½ï¿½o
    *
    * @param temaLaF
    */
@@ -432,8 +432,8 @@ public class TelaAgenda extends javax.swing.JFrame {
     } catch (ClassNotFoundException | InstantiationException |
             IllegalAccessException | UnsupportedLookAndFeelException ex) {
 
-      JOptionPane.showMessageDialog(null, "Tema não suportado neste S.O.",
-              "Atenção", JOptionPane.INFORMATION_MESSAGE);
+      JOptionPane.showMessageDialog(null, "Tema nï¿½o suportado neste S.O.",
+              "Atenï¿½ï¿½o", JOptionPane.INFORMATION_MESSAGE);
 
     }
 
